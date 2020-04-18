@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>SUMON django level two</title>
+	<link rel="stylesheet" href="{% static "css/apple.css"%}" />
+</head>
+
+<body>
+	<h1>Hi welcome to the django level two</h1>
+	<h2>I am sumon i have done good job tody </h2>
+
+	<div class="djangotwo">
+		{% if access_records %}
+		<table>
+			<thead>
+				<th>site name</th>
+				<th>Date access</th>
+			</thead>
+			{% for acc in access_records %}
+			<tr>
+				<td>{{ acc.name}}</td>
+				<td>{{ acc.date}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% else %}
+		<p>O NO ACCESS RECORD DENIED! TRY AGAIN SUMON</p>
+		{% endif %}
+	</div>
+
+</body>
+
+</html>
